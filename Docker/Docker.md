@@ -13,7 +13,7 @@
 
 ## 测试Docker安装是否成功
 
-运行`docker run hello-world`这条命令，如果出现以下的结果，则说明安装成功。
+运行`docker run hello-world`这条命令，如果出现以下的结果，则说明安装成功。
 
 ```bash
 Unable to find image 'hello-world:latest' locally
