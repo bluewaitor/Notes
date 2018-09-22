@@ -61,7 +61,7 @@ For more examples and ideas, visit:
 
 `Docker容器` 相当于面向对象中的`对象`
 
-`docker container ls` 列出正在运行的 Docker 容器
+`docker container ls` 列出正在运行的 Docker 容器
 
 `docker container ls -a` 列出所有的 Docker 容器，包括已经停止的容器
 
