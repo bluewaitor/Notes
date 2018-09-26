@@ -65,6 +65,16 @@ For more examples and ideas, visit:
 
 `docker container ls -a` 列出所有的 Docker 容器，包括已经停止的容器
 
+`docker ps -aq` 列出所有已停止的container的ID
+
+`docker rm <CONTAINER_ID>` 删除一个container
+
+`docker rm $(docker ps -aq)` 删除所有停止的container
+
+`docker start <CONTAINER_ID | CONTAINER_NAME>` 开始一个container
+
+`docker stop <CONTAINER_ID | CONTAINER_NAME>` 停止一个container
+
 ## 执行Docker镜像
 
 `docker run <IMAGE_NAME>`
