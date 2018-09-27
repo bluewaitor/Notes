@@ -57,6 +57,8 @@ For more examples and ideas, visit:
 
 `docker images` 或者 `docker image ls` 列出 Docker 镜像
 
+`docker image tag <IMAGE_ID> <TAG_NAME>` 对镜像打标签
+
 ## Docker Container
 
 `Docker容器` 相当于面向对象中的`对象`
@@ -74,6 +76,8 @@ For more examples and ideas, visit:
 `docker start <CONTAINER_ID | CONTAINER_NAME>` 开始一个container
 
 `docker stop <CONTAINER_ID | CONTAINER_NAME>` 停止一个container
+
+`docker container commit <CONTAINER_ID>` 提交一个container，使其成为一个镜像(image)
 
 ## 执行Docker镜像
 
