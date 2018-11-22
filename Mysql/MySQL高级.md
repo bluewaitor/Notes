@@ -1,8 +1,7 @@
-MySQL高级
-==
+# MySQL高级
 
-1.trigger触发器
---
+## trigger触发器
+
 insert/update/delete 可以触发 insert/upadte/delete
 
 监视谁

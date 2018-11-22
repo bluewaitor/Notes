@@ -1,35 +1,35 @@
-MarkDown学习笔记
-==
+# MarkDown学习笔记
 
-MarkDown是什么?
---
+## MarkDown是什么
 
 [MarkDown](http://daringfireball.net/projects/markdown/)是网页上对文字进行赋予样式的方式,你可以控制文件的展示.格式文字为粗体或者斜体,添加图片,创建列表,这都只是MarkDown功能的一小部分.基本上,MarkDown只是正常的文字加上一些非字母的字符,比如`#`(井号)或者`*`(星号).
 
 你可以在github许多地方上使用MarkDown:
+
 * Gists  
 * Comments in Issues and Pull Requests  
 * Files with the .md or .markdown extension  
 
-1.文本
---
-	It's very easy to make some words **bold** and other words *italic* with Markdown. You can even [link to Google!](http://google.com)
+### 1.文本
+
+    It's very easy to make some words **bold** and other words *italic* with Markdown. You can even [link to Google!](http://google.com)
+
 It's very easy to make some words **bold** and other words *italic* with Markdown. You can even [link to Google!](http://google.com)
 
-	语法:一个星号*(或者使用_下划线)是斜体,两个星号**(或者使用两个下划线__)是粗体,链接会自动识别,[]方括号是链接的名字,()括号是链接的地址
+    语法:一个星号*(或者使用_下划线)是斜体,两个星号**(或者使用两个下划线__)是粗体,链接会自动识别,[]方括号是链接的名字,()括号是链接的地址
 
-2.列表
---
-	Sometimes you want numbered lists:
+### 2.列表
 
-	1. One
-	2. Two
-	3. Three
+Sometimes you want numbered lists:
 
-	Sometimes you want bullet points:
-	
-	* Start a line with a star
-	* Profit!
+  1. One
+  2. Two
+  3. Three
+
+Sometimes you want bullet points:
+
+  * Start a line with a star
+  * Profit!
 
 	Alternatively,
 	
@@ -37,7 +37,6 @@ It's very easy to make some words **bold** and other words *italic* with Markdow
 	- And if you have sub points, put two spaces before the dash or star:
 	  - Like this
 	  - And this
-
 
 Sometimes you want numbered lists:
 
@@ -71,7 +70,7 @@ If you want to embed images, this is how you do it:
 
 ![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 
-	语法:图片跟链接差不多,在前面加一个英文的!感叹号.
+  语法:图片跟链接差不多,在前面加一个英文的!感叹号.
 
 4.标头&引用
 --
@@ -136,7 +135,7 @@ There are many different ways to style code with GitHub's markdown. If you have 
 
 GitHub also supports something called code fencing, which allows for multiple lines without indentation:
 
-```
+```javascript
 if (isAwesome){
   return true
 }
@@ -193,19 +192,22 @@ And, of course emoji! :sparkles: :camel: :boom:
 	
 	*You **can** combine them*
 
-###列表
-####无序列表
-	* Item 1
-	* Item 2
-	  * Item 2a
-	  * Item 2b
-	  
-####有序列表
-	1. Item 1
-	2. Item 2
-	3. Item 3
-	   * Item 3a
-	   * Item 3b
+### 列表
+
+#### 无序列表
+
+    * Item 1
+    * Item 2
+        * Item 2a
+        * Item 2b
+
+#### 有序列表
+
+    1. Item 1
+    2. Item 2
+    3. Item 3
+        * Item 3a
+        * Item 3b
 
 ###图片
 	![GitHub Logo](/images/logo.png)
@@ -334,3 +336,7 @@ ___
 
 
 
+
+
+
+[markdown支持的编程语言](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)

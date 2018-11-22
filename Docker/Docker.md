@@ -88,6 +88,7 @@ For more examples and ideas, visit:
 - `-d` detach分离模式，相当于后台运行
 - `-i` interactive交互模式
 - `-t` tty
+- `--name` 指定容器名字
 
 ## 删除没用的镜像
 
