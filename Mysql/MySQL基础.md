@@ -2,7 +2,7 @@
 
 ## 安装
 
-使用`Docker`的`mysql`镜像，使用Docker命令`docker pull mysql`下载MySQL最新的镜像
+使用`Docker`的`mysql`镜像，使用Docker命令`docker pull mysql`下载MySQL最新的镜像
 
 执行`docker run --name mysql-playground --env MYSQL_ALLOW_EMPTY_PASSWORD=yes --publish 3306:3306 --detach mysql`命令启动一个MySQL的容器。
 
@@ -64,12 +64,12 @@ mysql> SELECT VERSION(), CURRENT_DATE;
 1 row in set (0.00 sec)
 ```
 
-- 查询语句通常由一个SQL语句后面跟着分号组成（有的表达式不需要分号，比如前面的`QUIT`）
+- 查询语句通常由一个SQL语句后面跟着分号组成（有的表达式不需要分号，比如前面的`QUIT`）
 - 当你发出查询时，mysql将其发送到服务端执行并显示结果，然后打印另一个`mysql>`提示符表示它已准备好进行另一个查询。
 - mysql以表格形式（行和列）显示查询输出。第一行包含列的标签。以下行是查询结果。通常，列标签是从数据库表中提取的列的名称。如果您正在检索表达式的值而不是表列（如刚刚显示的示例中所示），则mysql使用表达式本身标记列。
 - mysql显示返回了多少行以及执行查询所需的时间，这使您可以大致了解服务器性能。这些值是不精确的，因为它们代表挂钟时间（不是CPU或机器时间），并且因为它们受到服务器负载和网络延迟等因素的影响。
 
-mysql关键字大小写不区分。以下查询是等效的：
+mysql关键字大小写不区分。以下查询是等效的：
 
 ```shell
 mysql> SELECT VERSION(), CURRENT_DATE;
@@ -77,7 +77,7 @@ mysql> select version(), current_date;
 mysql> SeLeCt vErSiOn(), current_DATE;
 ```
 
-mysql也可以用来做一些简单的计算：
+mysql也可以用来做一些简单的计算：
 
 ```shell
 mysql> SELECT SIN(PI()/4), (4+1)*5;
