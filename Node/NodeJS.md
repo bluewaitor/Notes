@@ -60,6 +60,6 @@
 
     CLI（command-line interface，命令行界面）
 
-[nodejs]:www.nodejs.org
-[npmdoc]:https://docs.npmjs.com/cli/
-[bowerdoc]:http://bower.io/docs/api/
+[nodejs]: www.nodejs.org
+[npmdoc]: https://docs.npmjs.com/cli/
+[bowerdoc]: http://bower.io/docs/api/

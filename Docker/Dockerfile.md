@@ -13,7 +13,7 @@ CMD ["node", "index.js"]
 - `FROM` 基于哪个镜像
 - `RUN` 执行命令
 - `COPY` 将当前目录的内容拷贝到容器的`/app`目录下
-- `WORKDIR` 工作目录，相当于`cd /app`
+- `WORKDIR` 工作目录，相当于`cd /app`
 - `CMD` 每次container启动执行的命令
   
 `docker [container] commit <CONTAINER_ID>` 提交容器的改变使其成为一个镜像
