@@ -10,3 +10,4 @@
 - Sublime-babel-vscode
 - Python
 - x86 and x86_64 Assembly
+- ESLint
