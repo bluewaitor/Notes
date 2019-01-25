@@ -1,5 +1,12 @@
 # JavaScript
 
+- JavaScript原始类型
+- 引用类型和基本类型
+- 深拷贝和浅拷贝
+- 原型继承
+- 闭包
+
+
 ## 目录
 
 - [资源链接](./ResourceLink.md)
