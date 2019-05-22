@@ -201,3 +201,101 @@ mysql> DESCRIBE pet;
 ```
 
 ### 给表添加数据
+
+先用`docker cp`命令将准备好的数据拷贝到docker容器中：
+`docker cp /Users/blue/Github/Notes/Mysql/pet.txt mysql-playground:/root`
+
+接着使用mysql命令将数据导入数据库中。如下：
+```shell
+mysql> LOAD DATA LOCAL INFILE '/root/pet.txt' INTO TABLE pet;
+ERROR 1148 (42000): The used command is not allowed with this MySQL version
+```
+出现了这个版本不支持导入的错误。
+
+执行以下命令查看是否支持导入：
+```shell
+mysql> SHOW GLOBAL VARIABLES LIKE 'local_infile';
++---------------+-------+
+| Variable_name | Value |
++---------------+-------+
+| local_infile  | OFF   |
++---------------+-------+
+1 row in set (0.00 sec)
+```
+
+可见，导入文件功能还是关闭的，我们把它打开来。
+```shell
+mysql> SET GLOBAL local_infile = 'ON';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SHOW GLOBAL VARIABLES LIKE 'local_infile';
++---------------+-------+
+| Variable_name | Value |
++---------------+-------+
+| local_infile  | ON    |
++---------------+-------+
+1 row in set (0.00 sec)
+```
+
+再试一下导入的命令。
+```shell
+mysql> LOAD DATA LOCAL INFILE '/root/pet.txt' INTO TABLE pet;
+Query OK, 8 rows affected (0.01 sec)
+Records: 8  Deleted: 0  Skipped: 0  Warnings: 0
+```
+哦力给，成功了。
+
+> 注意：pet.txt中分隔符必须是tab，如果设置了tab用空格代替的，必须先关掉
+
+也可以使用命令插入数据，比如：
+```shell
+mysql> INSERT INTO pet VALUES ('Puffball','Diane','hamster','f','1999-03-30',NULL);
+Query OK, 1 row affected (0.00 sec)
+```
+
+### 查询数据
+
+```shell
+mysql> SELECT * FROM pet;
++----------+--------+---------+------+------------+------------+
+| name     | owner  | species | sex  | birth      | death      |
++----------+--------+---------+------+------------+------------+
+| Fluffy   | Harold | cat     | f    | 1993-02-04 | NULL       |
+| Claws    | Gwen   | cat     | m    | 1994-03-17 | NULL       |
+| Buffy    | Harold | dog     | f    | 1989-05-13 | NULL       |
+| Fang     | Benny  | dog     | m    | 1990-08-27 | NULL       |
+| Bowser   | Diane  | dog     | m    | 1979-08-31 | 1995-07-29 |
+| Chirpy   | Gwen   | bird    | f    | 1998-09-11 | NULL       |
+| Whistler | Gwen   | bird    | NULL | 1997-12-09 | NULL       |
+| Slim     | Benny  | snake   | m    | 1996-04-29 | NULL       |
+| Puffball | Diane  | hamster | f    | 1999-03-30 | NULL       |
++----------+--------+---------+------+------------+------------+
+9 rows in set (0.00 sec)
+```
+
+假设我们要修改表的数据，可以先将整个表删除，修改pet.txt文件，再导入。
+```shell
+mysql> DELETE FROM pet;
+mysql> LOAD DATA LOCAL INFILE 'pet.txt' INTO TABLE pet;
+```
+
+但是这样做太蠢了，我们使用下面的命令直接修改。
+```shell
+mysql> UPDATE pet SET birth = '1989-08-31' WHERE name = 'Bowser';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+```
+
+#### 选择特定的行
+
+```shell
+mysql> SELECT * FROM pet WHERE name = 'Bowser';
++--------+-------+---------+------+------------+------------+
+| name   | owner | species | sex  | birth      | death      |
++--------+-------+---------+------+------------+------------+
+| Bowser | Diane | dog     | m    | 1989-08-31 | 1995-07-29 |
++--------+-------+---------+------+------------+------------+
+1 row in set (0.00 sec)
+```
+
+可以看到，1979已经被我们改为1989
