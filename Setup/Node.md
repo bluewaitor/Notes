@@ -142,7 +142,8 @@ Bash completion has been installed to:
 🍺  /usr/local/Cellar/node/10.12.0: 3,939 files, 46.6MB
 ```
 
-# nvm
+## nvm
+
 ```bash
 Updating Homebrew...
 ==> Auto-updated Homebrew!
