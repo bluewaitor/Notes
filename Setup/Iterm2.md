@@ -3,10 +3,15 @@
 `brew cask install iterm2`
 
 - 设置iterm2的显示位置
+
 > `Preferences->Profile->Default->Window->Style->Full-Width Top of Screen`
+
 - 设置iterm2的透明度  
+
 > `Preferences->Profile->Default->Window->Transparency`
+
 - 设置显示/隐藏iterm2的快捷键  
+
 > `Preferences->Keys->Hotkey->Show/hide all windows with a system-wide hotkey->cmd+i`
 
 ## 添加oh-my-zsh
