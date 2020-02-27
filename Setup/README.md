@@ -8,6 +8,14 @@
 - [Python3][python3]
 - [Node][node]
 - [Cask批量更新][caskupgrade]
+- [mas][mas]
+
+[homebrew]: ./Homebrew.md
+[cask]: ./HomebrewCask.md
+[python3]: ./Python3.md
+[node]: ./Node.md
+[caskupgrade]: ./CaskUpgrade.md
+[mas]: ./Mas.md
 
 ## 使用Cask安装的软件
 
@@ -18,12 +26,6 @@
 - [Docker][docker]
 - [jetbrains系列][jetbrains]
 - [常用软件][common]
-
-[homebrew]: ./Homebrew.md
-[cask]: ./HomebrewCask.md
-[python3]: ./Python3.md
-[node]: ./Node.md
-[caskupgrade]: ./CaskUpgrade.md
 
 [chrome]: ./GoogleChrome.md
 [iterm2]: ./Iterm2.md
