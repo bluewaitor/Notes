@@ -61,3 +61,38 @@ installer: Installing at base path /
 installer: The install was successful.
 🍺  java8 was successfully installed!
 ```
+
+## jenv 安装与使用
+
+`brew install jenv`
+
+`jenv doctor`
+
+```bash
+[ERROR]	Java binary in path is not in the jenv shims.
+[ERROR]	Please check your path, or try using /path/to/java/home is not a valid path to java installation.
+	PATH : /usr/local/Cellar/jenv/0.5.2/libexec/libexec:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Wireshark.app/Contents/MacOS
+[ERROR]	Jenv is not loaded in your zsh
+[ERROR]	To fix : 	cat eval "$(jenv init -)" >> /Users/bluewaitor/.zshrc
+```
+
+`echo 'eval "$(jenv init -)"' >> ~/.zshrc`
+
+重启terminal
+
+```bash
+[OK]	No JAVA_HOME set
+[ERROR]	Java binary in path is not in the jenv shims.
+[ERROR]	Please check your path, or try using /path/to/java/home is not a valid path to java installation.
+	PATH : /usr/local/Cellar/jenv/0.5.2/libexec/libexec:/Users/bluewaitor/.jenv/shims:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Wireshark.app/Contents/MacOS
+[OK]	Jenv is correctly loaded
+```
+
+为了保证`JAVA_HOME`已经设置，必须开启`export`插件：  
+`jenv enable-plugin export`  
+`exec $SHELL -l`  
+
+添加java路径：  
+`jenv add $(/usr/libexec/java_home)`
+
+可以通过`/usr/libexec/java_home -V`查看已安装版本。
